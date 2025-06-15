@@ -47,3 +47,6 @@ jobs:
 
       - name: Build Source
         run: bun run --if-present build
+
+      - name: Run Tests
+        run: bun run --if-present test
