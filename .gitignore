@@ -15,4 +15,4 @@ test-results/
 
 # Project specific
 app.js
-test.js
+test.ts
