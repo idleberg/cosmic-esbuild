@@ -1,0 +1,12 @@
+node_modules/
+bin/
+dist/
+.eslintcache
+
+# Development
+.esbuildrc
+.esbuildrc.*
+esbuild.config.*
+
+# Test
+test-results/

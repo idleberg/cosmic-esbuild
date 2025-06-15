@@ -1,0 +1,64 @@
+{
+	"name": "cosmic-esbuild",
+	"version": "0.0.0",
+	"description": "Simplifying esbuild configurations in a familiar way",
+	"license": "MIT",
+	"author": "Jan T. Sott",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/idleberg/cosmic-esbuild"
+	},
+	"keywords": [
+		"esbuild",
+		"esbuild-config",
+		"cosmiconfig"
+	],
+	"type": "module",
+	"bin": {
+		"cosmic-esbuild": "./bin/cosmic-esbuild.js"
+	},
+	"engines": {
+		"node": "^18.0.0 || ^20.0.0 || >=22.0.0"
+	},
+	"files": [
+		"dist/",
+		"LICENSE",
+		"README.md"
+	],
+	"scripts": {
+		"build": "tsdown",
+		"dev": "tsdown --watch",
+		"lint": "biome check --no-errors-on-unmatched --vcs-enabled=true --vcs-use-ignore-file=true",
+		"prepack": "npm run build",
+		"prepare": "lefthook install",
+		"publish:jsr": "deno publish",
+		"publish:npm": "np --any-branch",
+		"test": "concurrently -n 'server,client' -c 'blue,green' 'npm:test:*'",
+		"test:e2e": "playwright test",
+		"test:unit": "vitest run --dir src"
+	},
+	"dependencies": {
+		"@iarna/toml": "^2.2.5",
+		"commander": "^14.0.0",
+		"consola": "^3.4.2",
+		"cosmiconfig": "^9.0.0",
+		"jsonc-parser": "^3.3.1"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@commitlint/cli": "^19.8.1",
+		"@commitlint/config-conventional": "^19.8.1",
+		"@total-typescript/tsconfig": "^1.0.4",
+		"@types/node": "^22.15.21",
+		"concurrently": "^9.1.2",
+		"esbuild": "^0.25.5",
+		"lefthook": "^1.11.13",
+		"np": "^10.2.0",
+		"tsdown": "^0.12.4",
+		"typescript": "^5.8.3"
+	},
+	"peerDependencies": {
+		"esbuild": "^0.25"
+	},
+	"packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977"
+}
