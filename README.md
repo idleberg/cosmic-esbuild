@@ -29,8 +29,8 @@ Create a file for your configuration, see the following examples:
 {
 	"entryPoints": ["app.js"],
 	"bundle": true,
-	"sourcemap": "external",
-	"outdir": "lib"
+	"outdir": "lib",
+	"sourcemap": "external"
 }
 ```
 
