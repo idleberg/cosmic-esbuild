@@ -1,6 +1,7 @@
 node_modules/
 bin/
 dist/
+lib/
 .eslintcache
 
 # Development
@@ -9,4 +10,9 @@ dist/
 esbuild.config.*
 
 # Test
+coverage/
 test-results/
+
+# Project specific
+app.js
+test.js
