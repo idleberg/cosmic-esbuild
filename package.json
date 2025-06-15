@@ -32,10 +32,7 @@
 		"prepack": "npm run build",
 		"prepare": "lefthook install",
 		"publish:jsr": "deno publish",
-		"publish:npm": "np --any-branch",
-		"test": "concurrently -n 'server,client' -c 'blue,green' 'npm:test:*'",
-		"test:e2e": "playwright test",
-		"test:unit": "vitest run --dir src"
+		"publish:npm": "np --any-branch"
 	},
 	"dependencies": {
 		"@iarna/toml": "^2.2.5",
