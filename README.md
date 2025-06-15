@@ -105,7 +105,7 @@ export default config;
 You can write your configuration to any of the following formats (sorted by precedence):
 
 - `package.json` (add the `esbuild` property with your config)
-- `.esbuildrc`
+- `.esbuildrc` (JSON or YAML)
 - `.esbuildrc.json`
 - `.esbuildrc.jsonc`
 - `.esbuildrc.yaml`
