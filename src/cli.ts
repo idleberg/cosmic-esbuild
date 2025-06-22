@@ -1,7 +1,7 @@
 import { rm } from 'node:fs/promises';
 import { type OptionValues, program } from 'commander';
 import { type ConsolaInstance, createConsola } from 'consola';
-import { type BuildOptions, type Plugin, build, context } from 'esbuild';
+import { type BuildOptions, build, context, type Plugin } from 'esbuild';
 import { explorer } from './cosmiconfig.ts';
 
 const defaultBuildOptions: BuildOptions = {
