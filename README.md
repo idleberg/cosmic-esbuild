@@ -27,8 +27,8 @@ Create a file for your configuration, see the following examples:
 
 ```json
 {
-	"entryPoints": ["app.js"],
 	"bundle": true,
+	"entryPoints": ["app.js"],
 	"outdir": "lib",
 	"sourcemap": "external"
 }
