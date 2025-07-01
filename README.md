@@ -82,6 +82,8 @@ export default config;
 <details>
 <summary><code>package.json</code></summary>
 
+This is an extended example that also includes possible scripts
+
 ```json
 {
 	"name": "your-package",
