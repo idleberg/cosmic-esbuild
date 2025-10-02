@@ -107,7 +107,7 @@ export class CosmicEsbuild {
 			}
 
 			// TODO refine types
-			if (this.options.format) {
+			if (typeof this.options.format === 'string') {
 				options.external = this.options.format;
 			}
 
