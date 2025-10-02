@@ -1,6 +1,8 @@
 import { rm } from 'node:fs/promises';
+import { relative } from 'node:path';
 import { type OptionValues, program } from 'commander';
 import { type ConsolaInstance, createConsola } from 'consola';
+import { colorize } from 'consola/utils';
 import { type BuildOptions, build, context, type Plugin } from 'esbuild';
 import { explorer } from './cosmiconfig.ts';
 
@@ -88,6 +90,9 @@ export class CosmicEsbuild {
 
 				return defaultBuildOptions;
 			}
+
+			const configPath = relative(process.cwd(), result.filepath);
+			this.logger.info(`Found config at ${colorize('blue', configPath)}`);
 
 			const options = {
 				...defaultBuildOptions,
