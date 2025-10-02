@@ -67,7 +67,7 @@ describe('CosmicEsbuild', () => {
 		cli.build = vi.fn();
 		cli.watch = vi.fn();
 
-		// @ts-ignore: This is a private method, but we want to test it
+		// @ts-expect-error: This is a private method, but we want to test it
 		await cli['#loadConfig']?.();
 
 		expect(cli.build).not.toHaveBeenCalled(); // build is called in constructor, but we replaced it after
@@ -80,7 +80,7 @@ describe('CosmicEsbuild', () => {
 		cli.build = vi.fn();
 		cli.watch = vi.fn();
 
-		// @ts-ignore: This is a private method, but we want to test it
+		// @ts-expect-error: This is a private method, but we want to test it
 		await cli['#loadConfig']?.();
 
 		expect(cli.watch).not.toHaveBeenCalled(); // same as above
