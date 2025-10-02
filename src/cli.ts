@@ -37,24 +37,26 @@ export class CosmicEsbuild {
 			.configureOutput({
 				writeErr: (message) => this.logger.error(message),
 			})
+			.optionsGroup('Cosmic Options')
 			.option('-c, --config <file>', 'Path to the configuration file')
 			.option('-w, --watch', 'Run in watch mode', false)
 			.option('--clean', 'Clean output directory before building', false)
 			.option('--debug', 'Enable debug output', false)
 
-			// ESbuild simple options
-			.optionsGroup('ESBuild: Simple Options')
-			.option('--bundle', 'Bundle all dependencies into the output files')
+			.optionsGroup('esbuild Options')
+			.option('--allow-overwrite', 'Allow output files to overwrite input files', false)
+			.option('--bundle', 'Bundle all dependencies into the output files', false)
 			.option('--define <K=V...>', 'Substitute K with V while parsing')
 			.option('--external <module...>', 'Exclude module M from the bundle')
 			.option('--format <iife|cjs|esm>', 'Output format')
 			.option('--loader <X=L>', 'Use loader L to load file extension X')
-			.option('--minify', 'Minify the output')
+			.option('--minify', 'Minify the output', false)
 			.option('--outdir', 'The output directory (for multiple entry points)')
 			.option('--outfile', 'The output file (for one entry point)')
 			.option('--packages <bundle|external>', 'Set to "external" to avoid bundling any package')
-			.option('--sourcemap', 'Emit a source map')
-			.option('--splitting', 'Enable code splitting')
+			.option('--sourcemap', 'Emit a source map', false)
+			.option('--splitting', 'Enable code splitting', false)
+			.option('--tsconfig <file>', ' Use this tsconfig.json file instead of other one')
 			.option('--target <target...>', 'Environment target');
 
 		program.parse();
@@ -92,7 +94,7 @@ export class CosmicEsbuild {
 				...result.config,
 			};
 
-			if (typeof this.options.bundle !== 'undefined') {
+			if (this.options.bundle) {
 				options.bundle = this.options.bundle;
 			}
 
@@ -113,15 +115,15 @@ export class CosmicEsbuild {
 				options.loader = Object.fromEntries(this.options.define.map((item: string) => item.split('=')));
 			}
 
-			if (typeof this.options.minify !== 'undefined') {
+			if (this.options.minify) {
 				options.minify = this.options.minify;
 			}
 
-			if (typeof this.options.outdir !== 'undefined') {
+			if (typeof this.options.outdir === 'string') {
 				options.outdir = this.options.outdir;
 			}
 
-			if (typeof this.options.outfile !== 'undefined') {
+			if (typeof this.options.outfile === 'string') {
 				options.outfile = this.options.outfile;
 			}
 
@@ -129,16 +131,25 @@ export class CosmicEsbuild {
 				options.packages = this.options.packages;
 			}
 
-			if (typeof this.options.sourcemap !== 'undefined') {
+			if (this.options.sourcemap) {
 				options.sourcemap = this.options.sourcemap;
 			}
 
-			if (typeof this.options.splitting !== 'undefined') {
+			if (this.options.splitting) {
 				options.splitting = this.options.splitting;
 			}
 
 			if (this.options.target) {
 				options.target = this.options.target;
+			}
+
+			// Advanced Options
+			if (this.options.allowOverwrite) {
+				options.allowOverwrite = this.options.allowOverwrite;
+			}
+
+			if (typeof this.options.tsconfig === 'string') {
+				options.tsconfig = this.options.tsconfig;
 			}
 
 			return options;
@@ -158,9 +169,20 @@ export class CosmicEsbuild {
 
 	async build() {
 		await this.#clean();
-		await build(this.config);
 
-		this.logger.success('Build completed');
+		const start = performance.now();
+
+		try {
+			await build(this.config);
+		} catch {
+			// an error should have printed by now, let's return quietly
+			return;
+		}
+
+		const end = performance.now();
+		const duration = ((end - start) / 1000).toFixed(3);
+
+		this.logger.success(`Build completed in ${duration}s`);
 	}
 
 	async watch() {

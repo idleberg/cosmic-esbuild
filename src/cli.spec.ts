@@ -5,6 +5,7 @@ import { CosmicEsbuild } from '../src/cli.ts';
 vi.mock('commander', () => ({
 	program: {
 		configureOutput: vi.fn().mockReturnThis(),
+		optionsGroup: vi.fn().mockReturnThis(),
 		option: vi.fn().mockReturnThis(),
 		parse: vi.fn(),
 		opts: vi.fn(() => ({
