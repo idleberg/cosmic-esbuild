@@ -35,7 +35,7 @@ export class CosmicEsbuild {
 	#parseOptions(): OptionValues {
 		program
 			.configureOutput({
-				writeErr: (message) => this.logger.error(message),
+				writeErr: (message: string) => this.logger.error(message),
 			})
 			.optionsGroup('Cosmic Options')
 			.option('-c, --config <file>', 'Path to the configuration file')
