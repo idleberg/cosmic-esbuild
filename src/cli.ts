@@ -11,30 +11,37 @@ const defaultBuildOptions: BuildOptions = {
 };
 
 export class CosmicEsbuild {
-	config: BuildOptions = {} as BuildOptions;
+	config = {} as BuildOptions;
+	options = {} as OptionValues;
+	entryPoints: string[] = [];
 	logger: ConsolaInstance;
-	options: OptionValues;
 
 	constructor() {
 		this.logger = this.#createLogger();
-		this.options = this.#parseOptions();
+		this.#parseOptions();
 
-		this.#loadConfig().then(async (config) => {
-			this.config = config;
+		this.#loadConfig()
+			.then(async (config) => {
+				if (!config.entryPoints) {
+					throw new Error('No entrypoints have been defined.');
+				}
 
-			if (this.options.debug) {
-				this.logger.debug('esbuild Options:', config);
-			}
+				this.config = config;
 
-			if (this.options.watch) {
-				await this.watch();
-			} else {
-				await this.build();
-			}
-		});
+				if (this.options.debug) {
+					this.logger.debug('esbuild Options:', config);
+				}
+
+				if (this.options.watch) {
+					await this.watch();
+				} else {
+					await this.build();
+				}
+			})
+			.catch((error) => this.logger.error((error as Error).message));
 	}
 
-	#parseOptions(): OptionValues {
+	#parseOptions() {
 		program
 			.configureOutput({
 				writeErr: (message: string) => this.logger.error(message),
@@ -45,8 +52,7 @@ export class CosmicEsbuild {
 			.option('--clean', 'Clean output directory before building', false)
 			.option('--debug', 'Enable debug output', false)
 
-			.optionsGroup('esbuild Options')
-			.option('--allow-overwrite', 'Allow output files to overwrite input files', false)
+			.optionsGroup('esbuild Basic Options')
 			.option('--bundle', 'Bundle all dependencies into the output files', false)
 			.option('--define <K=V...>', 'Substitute K with V while parsing')
 			.option('--external <module...>', 'Exclude module M from the bundle')
@@ -58,17 +64,22 @@ export class CosmicEsbuild {
 			.option('--packages <bundle|external>', 'Set to "external" to avoid bundling any package')
 			.option('--sourcemap', 'Emit a source map', false)
 			.option('--splitting', 'Enable code splitting', false)
+			.option('--target <target...>', 'Environment target')
+
+			.optionsGroup('esbuild Advanced Options')
+			.option('--allow-overwrite', 'Allow output files to overwrite input files', false)
 			.option('--tsconfig <file>', ' Use this tsconfig.json file instead of other one')
-			.option('--target <target...>', 'Environment target');
+
+			.argument('[entrypoints...]');
 
 		program.parse();
-		const options = program.opts();
+		this.options = program.opts();
+		this.entryPoints = program.args;
 
-		if (options.debug) {
-			this.logger.debug('CLI Options:', program.opts());
+		if (this.options.debug) {
+			this.logger.debug('CLI Options:', this.options);
+			this.logger.debug('CLI Entrypoints:', this.entryPoints);
 		}
-
-		return options;
 	}
 
 	#createLogger() {
@@ -87,18 +98,21 @@ export class CosmicEsbuild {
 
 			if (result === null) {
 				this.logger.warn('No configuration file found.');
-
-				return defaultBuildOptions;
+			} else {
+				const configPath = relative(process.cwd(), result.filepath);
+				this.logger.info(`Found config at ${colorize('blue', configPath)}`);
 			}
-
-			const configPath = relative(process.cwd(), result.filepath);
-			this.logger.info(`Found config at ${colorize('blue', configPath)}`);
 
 			const options = {
 				...defaultBuildOptions,
-				...result.config,
+				...result?.config,
 			};
 
+			if (this.entryPoints.length) {
+				options.entryPoints = this.entryPoints;
+			}
+
+			// Basic options
 			if (this.options.bundle) {
 				options.bundle = this.options.bundle;
 			}
