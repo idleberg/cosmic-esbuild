@@ -136,6 +136,11 @@ npx cosmic-esbuild --config esbuild.config.ts
 npx cosmic-esbuild --watch
 ```
 
+> [!NOTE]
+> The CLI should primarily be used with configuration files. However, some of the basic esbuild options can be passed as command-line arguments. It's not a goal of this project to replicate esbuild's CLI functionality.
+
+For a full list of command-line arguments, run `npx cosmic-build --help`.
+
 ## License
 
 This work is licensed under [The MIT License](LICENSE).
