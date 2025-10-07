@@ -98,6 +98,8 @@ export class CosmicEsbuild {
 
 			if (result === null) {
 				this.logger.warn('No configuration file found.');
+			} else if (result.isEmpty) {
+				this.logger.warn('Configuration file is empty.');
 			} else {
 				const configPath = relative(process.cwd(), result.filepath);
 				this.logger.info(`Found config at ${colorize('blue', configPath)}`);
