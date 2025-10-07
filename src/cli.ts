@@ -1,5 +1,5 @@
 import { rm } from 'node:fs/promises';
-import { relative } from 'node:path';
+import { basename, extname, relative } from 'node:path';
 import { type OptionValues, program } from 'commander';
 import { type ConsolaInstance, createConsola } from 'consola';
 import { colorize } from 'consola/utils';
@@ -102,6 +102,17 @@ export class CosmicEsbuild {
 				this.logger.warn('Configuration file is empty.');
 			} else {
 				const configPath = relative(process.cwd(), result.filepath);
+				const configExt = extname(result.filepath);
+				const configBaseName = basename(result.filepath);
+
+				if (configBaseName.startsWith('.esbuildrc')) {
+					const newConfigName = `esbuild.config${configExt.length ? configExt : '.json'}`;
+
+					this.logger.warn(
+						`Hidden configuration files like ${colorize('red', configPath)} are now deprecated. Use ${colorize('green', newConfigName)} instead.`,
+					);
+				}
+
 				this.logger.info(`Found config at ${colorize('blue', configPath)}`);
 			}
 
