@@ -68,7 +68,6 @@ export class CosmicEsbuild {
 
 			.optionsGroup('esbuild Advanced Options')
 			.option('--allow-overwrite', 'Allow output files to overwrite input files', false)
-			.option('--tsconfig <file>', ' Use this tsconfig.json file instead of other one')
 
 			.argument('[entrypoints...]');
 
@@ -170,10 +169,6 @@ export class CosmicEsbuild {
 			// Advanced Options
 			if (this.options.allowOverwrite) {
 				options.allowOverwrite = this.options.allowOverwrite;
-			}
-
-			if (typeof this.options.tsconfig === 'string') {
-				options.tsconfig = this.options.tsconfig;
 			}
 
 			return options;
