@@ -102,16 +102,8 @@ export class CosmicEsbuild {
 				this.logger.warn('Configuration file is empty.');
 			} else {
 				const configPath = relative(process.cwd(), result.filepath);
-				const configExt = extname(result.filepath);
-				const configBaseName = basename(result.filepath);
 
-				if (configBaseName.startsWith('.esbuildrc')) {
-					const newConfigName = `esbuild.config${configExt.length ? configExt : '.json'}`;
-
-					this.logger.warn(
-						`Hidden configuration files like ${colorize('red', configPath)} are now deprecated. Use ${colorize('green', newConfigName)} instead.`,
-					);
-				}
+				this.#deprecationWarning(configPath);
 
 				this.logger.info(`Found config at ${colorize('blue', configPath)}`);
 			}
@@ -241,5 +233,24 @@ export class CosmicEsbuild {
 		});
 
 		await ctx.watch({});
+	}
+
+	#deprecationWarning(filepath: string) {
+		const configExt = extname(filepath);
+		const configBaseName = basename(filepath);
+
+		if (configBaseName.startsWith('.esbuildrc')) {
+			const newConfigName = `esbuild.config${configExt.length ? configExt : '.json'}`;
+
+			this.logger.warn(
+				`Hidden configuration files like ${colorize('red', filepath)} are now deprecated. Use ${colorize('green', newConfigName)} instead.`,
+			);
+		}
+
+		if (configBaseName === 'package.json') {
+			this.logger.warn(
+				`Configuration options in ${colorize('red', 'package.json')} are now deprecated. Use ${colorize('green', 'esbuild.config.*')} instead.`,
+			);
+		}
 	}
 }
