@@ -4,7 +4,7 @@
 
 [![License](https://img.shields.io/github/license/idleberg/cosmic-esbuild?color=blue&style=for-the-badge)](https://github.com/idleberg/cosmic-esbuild/blob/main/LICENSE)
 [![Version: npm](https://img.shields.io/npm/v/cosmic-esbuild?style=for-the-badge)](https://www.npmjs.org/package/cosmic-esbuild)
-[![CI: Node](https://img.shields.io/github/actions/workflow/status/idleberg/cosmic-esbuild/node.yml?logo=nodedotjs&logoColor=white&style=for-the-badge)](https://github.com/idleberg/cosmic-esbuild/actions/workflows/node.yml)
+![GitHub branch check runs](https://img.shields.io/github/check-runs/idleberg/cosmic-esbuild/main?style=for-the-badge)
 
 ## Description
 
@@ -135,6 +135,11 @@ npx cosmic-esbuild --config esbuild.config.ts
 # Watch
 npx cosmic-esbuild --watch
 ```
+
+> [!NOTE]
+> The CLI should primarily be used with configuration files. However, some of the basic esbuild options can be passed as command-line arguments. It's not a goal of this project to replicate esbuild's CLI functionality.
+
+For a full list of command-line arguments, run `npx cosmic-build --help`.
 
 ## License
 
