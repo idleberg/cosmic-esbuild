@@ -466,7 +466,7 @@ describe('CosmicEsbuild', () => {
 				isEmpty: false,
 			} as any);
 
-			const cli = new CosmicEsbuild();
+			new CosmicEsbuild();
 			await vi.runAllTimersAsync();
 
 			expect(build).toHaveBeenCalledWith(
@@ -483,7 +483,7 @@ describe('CosmicEsbuild', () => {
 				isEmpty: false,
 			} as any);
 
-			const cli = new CosmicEsbuild();
+			new CosmicEsbuild();
 			await vi.runAllTimersAsync();
 
 			expect(mockLogger.success).toHaveBeenCalledWith(expect.stringContaining('Build completed in'));
@@ -497,7 +497,7 @@ describe('CosmicEsbuild', () => {
 			} as any);
 			vi.mocked(build).mockRejectedValue(new Error('Build failed'));
 
-			const cli = new CosmicEsbuild();
+			new CosmicEsbuild();
 			await vi.runAllTimersAsync();
 
 			// Should not log success when build fails
@@ -512,7 +512,7 @@ describe('CosmicEsbuild', () => {
 				isEmpty: false,
 			} as any);
 
-			const cli = new CosmicEsbuild();
+			new CosmicEsbuild();
 			await vi.runAllTimersAsync();
 
 			expect(mockLogger.info).toHaveBeenCalledWith('Cleaning output directory...');
@@ -527,7 +527,7 @@ describe('CosmicEsbuild', () => {
 				isEmpty: false,
 			} as any);
 
-			const cli = new CosmicEsbuild();
+			new CosmicEsbuild();
 			await vi.runAllTimersAsync();
 
 			expect(rm).not.toHaveBeenCalled();
