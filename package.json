@@ -1,6 +1,6 @@
 {
 	"name": "cosmic-esbuild",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"description": "Simplifying esbuild configurations in a familiar way",
 	"license": "MIT",
 	"author": "Jan T. Sott",
