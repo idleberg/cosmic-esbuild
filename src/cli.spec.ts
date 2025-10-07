@@ -768,6 +768,11 @@ describe('CosmicEsbuild', () => {
 			expect(program.option).toHaveBeenCalledWith('-w, --watch', 'Run in watch mode', false);
 			expect(program.option).toHaveBeenCalledWith('--clean', 'Clean output directory before building', false);
 			expect(program.option).toHaveBeenCalledWith('--bundle', 'Bundle all dependencies into the output files', false);
+			expect(program.option).toHaveBeenCalledWith(
+				'--outdir <directory>',
+				'The output directory (for multiple entry points)',
+			);
+			expect(program.option).toHaveBeenCalledWith('--outfile <file>', 'The output file (for one entry point)');
 		});
 
 		it('should register entrypoints argument', async () => {
