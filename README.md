@@ -113,6 +113,7 @@ You can write your configuration to any of the following formats (sorted by prec
 - `.esbuildrc.yaml`
 - `.esbuildrc.yml`
 - `.esbuildrc.toml`
+- `.esbuildrc.cson`
 - `esbuild.config.json`
 - `esbuild.config.jsonc`
 - `esbuild.config.yaml`
@@ -122,6 +123,7 @@ You can write your configuration to any of the following formats (sorted by prec
 - `esbuild.config.ts`
 - `esbuild.config.cjs`
 - `esbuild.config.mjs`
+- `esbuild.config.cson`
 
 ### CLI
 

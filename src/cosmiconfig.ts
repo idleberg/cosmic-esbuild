@@ -1,8 +1,17 @@
 import TOML from '@iarna/toml';
 import { cosmiconfig } from 'cosmiconfig';
+import CSON from 'cson-parser';
 import JSONC, { type ParseError } from 'jsonc-parser';
 
 const moduleName = 'esbuild';
+
+export function csonLoader(filePath: string, content: string) {
+	try {
+		return CSON.parse(content);
+	} catch (error) {
+		throw new Error(`Error parsing CSON file at ${filePath}: ${(error as Error).message}`);
+	}
+}
 
 export function tomlLoader(filePath: string, content: string): TOML.JsonMap {
 	try {
@@ -39,6 +48,7 @@ export const explorer = cosmiconfig(moduleName, {
 		`.${moduleName}rc.yaml`,
 		`.${moduleName}rc.yml`,
 		`.${moduleName}rc.toml`,
+		`.${moduleName}rc.cson`,
 
 		// config files
 		`${moduleName}.config.json`,
@@ -50,10 +60,14 @@ export const explorer = cosmiconfig(moduleName, {
 		`${moduleName}.config.ts`,
 		`${moduleName}.config.cjs`,
 		`${moduleName}.config.mjs`,
+		`${moduleName}.config.cson`,
 	],
 	loaders: {
+		'.cson': csonLoader,
+
 		// allow JSONC in plain JSON files
 		'.json': jsoncLoader,
+
 		'.jsonc': jsoncLoader,
 		'.toml': tomlLoader,
 	},

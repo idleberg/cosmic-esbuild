@@ -1,5 +1,20 @@
 import { describe, expect, it } from 'vitest';
-import { jsoncLoader, tomlLoader } from '../src/cosmiconfig.ts';
+import { csonLoader, jsoncLoader, tomlLoader } from '../src/cosmiconfig.ts';
+
+describe('csonLoader', () => {
+	it('parses valid CSON', () => {
+		const content = 'foo: "bar"\nnum: 42';
+		const result = csonLoader('test.cson', content);
+
+		expect(result).toEqual({ foo: 'bar', num: 42 });
+	});
+
+	it('throws on invalid CSON', () => {
+		const content = 'foo: ';
+
+		expect(() => csonLoader('bad.cson', content)).toThrow(/Error parsing CSON file/);
+	});
+});
 
 describe('tomlLoader', () => {
 	it('parses valid TOML', () => {
