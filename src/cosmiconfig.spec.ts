@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { csonLoader, jsoncLoader, tomlLoader } from '../src/cosmiconfig.ts';
+import { csonLoader, jsoncLoader, tomlLoader } from './cosmiconfig.ts';
 
 describe('csonLoader', () => {
 	it('parses valid CSON', () => {
