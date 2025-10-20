@@ -3,7 +3,7 @@ import { cosmiconfig } from 'cosmiconfig';
 import CSON from 'cson-parser';
 import JSONC, { type ParseError } from 'jsonc-parser';
 
-const moduleName = 'esbuild';
+const MODULE_NAME = 'esbuild';
 
 export function csonLoader(filePath: string, content: string) {
 	try {
@@ -36,31 +36,31 @@ export function jsoncLoader(filePath: string, content: string): ReturnType<typeo
 	return result;
 }
 
-export const explorer = cosmiconfig(moduleName, {
+export const explorer = cosmiconfig(MODULE_NAME, {
 	searchPlaces: [
 		// manifest
 		'package.json',
 
 		// runcom files
-		`.${moduleName}rc`,
-		`.${moduleName}rc.json`,
-		`.${moduleName}rc.jsonc`,
-		`.${moduleName}rc.yaml`,
-		`.${moduleName}rc.yml`,
-		`.${moduleName}rc.toml`,
-		`.${moduleName}rc.cson`,
+		`.${MODULE_NAME}rc`,
+		`.${MODULE_NAME}rc.json`,
+		`.${MODULE_NAME}rc.jsonc`,
+		`.${MODULE_NAME}rc.yaml`,
+		`.${MODULE_NAME}rc.yml`,
+		`.${MODULE_NAME}rc.toml`,
+		`.${MODULE_NAME}rc.cson`,
 
 		// config files
-		`${moduleName}.config.json`,
-		`${moduleName}.config.jsonc`,
-		`${moduleName}.config.yaml`,
-		`${moduleName}.config.yml`,
-		`${moduleName}.config.toml`,
-		`${moduleName}.config.js`,
-		`${moduleName}.config.ts`,
-		`${moduleName}.config.cjs`,
-		`${moduleName}.config.mjs`,
-		`${moduleName}.config.cson`,
+		`${MODULE_NAME}.config.json`,
+		`${MODULE_NAME}.config.jsonc`,
+		`${MODULE_NAME}.config.yaml`,
+		`${MODULE_NAME}.config.yml`,
+		`${MODULE_NAME}.config.toml`,
+		`${MODULE_NAME}.config.js`,
+		`${MODULE_NAME}.config.ts`,
+		`${MODULE_NAME}.config.cjs`,
+		`${MODULE_NAME}.config.mjs`,
+		`${MODULE_NAME}.config.cson`,
 	],
 	loaders: {
 		'.cson': csonLoader,
