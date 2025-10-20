@@ -7,9 +7,12 @@ export default defineConfig((options) => {
 		target: 'node18',
 		clean: isProduction,
 		dts: isProduction,
-		entry: ['src/index.ts'],
+		entry: {
+			bin: 'src/index.ts',
+			config: 'src/config.ts',
+		},
 		format: 'esm',
 		minify: isProduction,
-		outDir: 'bin',
+		outDir: 'lib',
 	};
 });

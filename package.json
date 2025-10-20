@@ -15,13 +15,19 @@
 	],
 	"type": "module",
 	"bin": {
-		"cosmic-esbuild": "./bin/index.js"
+		"cosmic-esbuild": "./lib/bin.js"
+	},
+	"exports": {
+		".": {
+			"types": "./lib/config.d.ts",
+			"import": "./lib/config.js"
+		}
 	},
 	"engines": {
 		"node": "^18.0.0 || ^20.0.0 || >=22.0.0"
 	},
 	"files": [
-		"bin/",
+		"lib/",
 		"LICENSE",
 		"README.md"
 	],
