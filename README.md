@@ -75,7 +75,7 @@ export defineConfig({
 });
 ```
 
-Alternatively, use the `satisfies` keyword.
+Alternatively, make use the `satisfies` operator introduced in TypeScript 4.9:
 
 ```typescript
 import type { BuildOptions } from "esbuild";
