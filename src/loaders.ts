@@ -2,6 +2,10 @@ import TOML from '@iarna/toml';
 import CSON from 'cson-parser';
 import JSONC, { type ParseError } from 'jsonc-parser';
 
+/**
+ * Loader for CSON files.
+ * @internal
+ */
 export function csonLoader(filePath: string, content: string) {
 	try {
 		return CSON.parse(content);
@@ -10,6 +14,10 @@ export function csonLoader(filePath: string, content: string) {
 	}
 }
 
+/**
+ * Loader for TOML files.
+ * @internal
+ */
 export function tomlLoader(filePath: string, content: string): TOML.JsonMap {
 	try {
 		return TOML.parse(content);
@@ -18,6 +26,10 @@ export function tomlLoader(filePath: string, content: string): TOML.JsonMap {
 	}
 }
 
+/**
+ * Loader for JSONC files, adding simple error handling.
+ * @internal
+ */
 export function jsoncLoader(filePath: string, content: string): ReturnType<typeof JSONC.parse> {
 	const errors: ParseError[] = [];
 	const result = JSONC.parse(content, errors);
