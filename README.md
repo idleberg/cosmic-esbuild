@@ -65,6 +65,19 @@ sourcemap = "external"
 <summary><strong>TypeScript</strong></summary>
 
 ```typescript
+import { defineConfig } from "cosmic-esbuild";
+
+export defineConfig({
+	bundle: true,
+	entryPoints: ["app.js"],
+	outdir: "dist",
+	sourcemap: "external",
+});
+```
+
+Alternatively, use the `satisfies` keyword.
+
+```typescript
 import type { BuildOptions } from "esbuild";
 
 const config = {
