@@ -67,7 +67,7 @@ sourcemap = "external"
 ```typescript
 import { defineConfig } from "cosmic-esbuild";
 
-export defineConfig({
+export default defineConfig({
 	bundle: true,
 	entryPoints: ["app.js"],
 	outdir: "dist",
