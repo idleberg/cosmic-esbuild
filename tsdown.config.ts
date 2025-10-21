@@ -11,7 +11,7 @@ export default defineConfig((options) => {
 			bin: 'src/index.ts',
 			config: 'src/config.ts',
 		},
-		format: 'esm',
+		format: ['esm', 'cjs'],
 		minify: isProduction,
 		outDir: 'lib',
 	};

@@ -20,9 +20,12 @@
 	"exports": {
 		".": {
 			"types": "./lib/config.d.ts",
-			"import": "./lib/config.js"
+			"import": "./lib/config.js",
+			"require": "./lib/config.cjs"
 		}
 	},
+	"main": "./lib/config.cjs",
+	"types": "./lib/config.d.cts",
 	"engines": {
 		"node": "^18.0.0 || ^20.0.0 || >=22.0.0"
 	},
