@@ -74,22 +74,6 @@ export default defineConfig({
 	sourcemap: "external",
 });
 ```
-
-Alternatively, make use the `satisfies` operator introduced in TypeScript 4.9:
-
-```typescript
-import type { BuildOptions } from "esbuild";
-
-const config = {
-	bundle: true,
-	entryPoints: ["app.js"],
-	outdir: "dist",
-	sourcemap: "external",
-} satisfies BuildOptions;
-
-export default config;
-```
-
 </details>
 
 <details>
