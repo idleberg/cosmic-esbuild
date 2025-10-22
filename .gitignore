@@ -5,6 +5,7 @@ lib/
 .eslintcache
 
 # Development
+.config/
 .esbuildrc
 .esbuildrc.*
 esbuild.config.*
