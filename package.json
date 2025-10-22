@@ -1,7 +1,7 @@
 {
 	"name": "cosmic-esbuild",
 	"version": "0.4.1",
-	"description": "Simplifying esbuild configurations in a familiar way",
+	"description": "esbuild meets cosmiconfig, write your configs like you're used to",
 	"license": "MIT",
 	"author": "Jan T. Sott",
 	"repository": {
