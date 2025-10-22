@@ -32,7 +32,7 @@ You can write your configuration to any of the following formats (sorted by prec
 - [`.esbuildrc.js`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.js)
 - [`.esbuildrc.ts`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.ts)
 - [`.esbuildrc.cjs`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.cjs)
-- [`.esbuildrc.mjs`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.mjs)
+- [`.esbuildrc.mjs`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.js)
 - [`.esbuildrc.cson`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.cson)
 - `.config/esbuildrc` (see JSON or YAML)
 - [`.config/esbuildrc.json`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.json)
@@ -43,7 +43,7 @@ You can write your configuration to any of the following formats (sorted by prec
 - [`.config/esbuildrc.js`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.js)
 - [`.config/esbuildrc.ts`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.ts)
 - [`.config/esbuildrc.cjs`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.cjs)
-- [`.config/esbuildrc.mjs`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.mjs)
+- [`.config/esbuildrc.mjs`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.js)
 - [`.config/esbuildrc.cson`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.cson)
 - [`esbuild.config.json`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.json)
 - [`esbuild.config.jsonc`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.jsonc)
@@ -53,7 +53,7 @@ You can write your configuration to any of the following formats (sorted by prec
 - [`esbuild.config.js`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.js)
 - [`esbuild.config.ts`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.ts)
 - [`esbuild.config.cjs`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.cjs)
-- [`esbuild.config.mjs`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.mjs)
+- [`esbuild.config.mjs`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.js)
 - [`esbuild.config.cson`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.cson)
 
 ### CLI
