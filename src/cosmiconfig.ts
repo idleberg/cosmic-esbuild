@@ -15,7 +15,24 @@ export const explorer = cosmiconfig(MODULE_NAME, {
 		`.${MODULE_NAME}rc.yaml`,
 		`.${MODULE_NAME}rc.yml`,
 		`.${MODULE_NAME}rc.toml`,
+		`.${MODULE_NAME}rc.js`,
+		`.${MODULE_NAME}rc.ts`,
+		`.${MODULE_NAME}rc.cjs`,
+		`.${MODULE_NAME}rc.mjs`,
 		`.${MODULE_NAME}rc.cson`,
+
+		// .config folder
+		`.config/${MODULE_NAME}rc`,
+		`.config/${MODULE_NAME}rc.json`,
+		`.config/${MODULE_NAME}rc.jsonc`,
+		`.config/${MODULE_NAME}rc.yaml`,
+		`.config/${MODULE_NAME}rc.yml`,
+		`.config/${MODULE_NAME}rc.toml`,
+		`.config/${MODULE_NAME}rc.js`,
+		`.config/${MODULE_NAME}rc.ts`,
+		`.config/${MODULE_NAME}rc.cjs`,
+		`.config/${MODULE_NAME}rc.mjs`,
+		`.config/${MODULE_NAME}rc.cson`,
 
 		// config files
 		`${MODULE_NAME}.config.json`,

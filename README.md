@@ -110,7 +110,22 @@ You can write your configuration to any of the following formats (sorted by prec
 - `.esbuildrc.yaml`
 - `.esbuildrc.yml`
 - `.esbuildrc.toml`
+- `.esbuildrc.js`
+- `.esbuildrc.ts`
+- `.esbuildrc.cjs`
+- `.esbuildrc.mjs`
 - `.esbuildrc.cson`
+- `.config/esbuildrc` (JSON or YAML)
+- `.config/esbuildrc.json`
+- `.config/esbuildrc.jsonc`
+- `.config/esbuildrc.yaml`
+- `.config/esbuildrc.yml`
+- `.config/esbuildrc.toml`
+- `.config/esbuildrc.js`
+- `.config/esbuildrc.ts`
+- `.config/esbuildrc.cjs`
+- `.config/esbuildrc.mjs`
+- `.config/esbuildrc.cson`
 - `esbuild.config.json`
 - `esbuild.config.jsonc`
 - `esbuild.config.yaml`
