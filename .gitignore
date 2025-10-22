@@ -9,6 +9,7 @@ lib/
 .esbuildrc
 .esbuildrc.*
 esbuild.config.*
+!examples/esbuild.config.*
 
 # Test
 coverage/
