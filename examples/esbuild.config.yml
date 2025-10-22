@@ -1,0 +1,5 @@
+bundle: true
+entryPoints:
+  - "app.js"
+outdir: "lib"
+sourcemap: "external"

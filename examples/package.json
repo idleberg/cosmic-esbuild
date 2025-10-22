@@ -1,0 +1,16 @@
+{
+	"name": "your-app",
+	"private": true,
+	"scripts": {
+		"build": "cosmic-esbuild",
+		"dev": "cosmic-esbuild --watch"
+	},
+	"esbuild": {
+		"bundle": true,
+		"entryPoints": [
+			"app.js"
+		],
+		"outdir": "lib",
+		"sourcemap": "external"
+	}
+}

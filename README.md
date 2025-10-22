@@ -20,122 +20,41 @@ npm install cosmic-esbuild
 
 ### Configuration
 
-Create a file for your configuration, see the following examples:
-
-<details>
-<summary><strong>JSON</strong></summary>
-
-```json
-{
-	"bundle": true,
-	"entryPoints": ["app.js"],
-	"outdir": "lib",
-	"sourcemap": "external"
-}
-```
-
-</details>
-
-<details>
-<summary><strong>YAML</strong></summary>
-
-```yaml
-bundle: true
-entryPoints:
-  - "app.js"
-outdir: "lib"
-sourcemap: "external"
-```
-
-</details>
-
-<details>
-<summary><strong>TOML</strong></summary>
-
-```toml
-bundle = true
-entryPoints = [ "app.js" ]
-outdir = "lib"
-sourcemap = "external"
-```
-
-</details>
-
-<details>
-<summary><strong>TypeScript</strong></summary>
-
-```typescript
-import { defineConfig } from "cosmic-esbuild";
-
-export default defineConfig({
-	bundle: true,
-	entryPoints: ["app.js"],
-	outdir: "dist",
-	sourcemap: "external",
-});
-```
-</details>
-
-<details>
-<summary><code>package.json</code></summary>
-
-This is an extended example that also includes possible scripts
-
-```json
-{
-	"name": "your-package",
-	"scripts": {
-		"build": "cosmic-esbuild",
-		"dev": "cosmic-esbuild --watch"
-	},
-	"esbuild": {
-		"bundle": true,
-		"entryPoints": ["app.js"],
-		"outdir": "lib",
-		"sourcemap": "external"
-	}
-}
-```
-
-</details>
-
-### Supported formats
-
 You can write your configuration to any of the following formats (sorted by precedence):
 
-- `package.json` (add the `esbuild` property with your config)
-- `.esbuildrc` (JSON or YAML)
-- `.esbuildrc.json`
-- `.esbuildrc.jsonc`
-- `.esbuildrc.yaml`
-- `.esbuildrc.yml`
-- `.esbuildrc.toml`
-- `.esbuildrc.js`
-- `.esbuildrc.ts`
-- `.esbuildrc.cjs`
-- `.esbuildrc.mjs`
-- `.esbuildrc.cson`
-- `.config/esbuildrc` (JSON or YAML)
-- `.config/esbuildrc.json`
-- `.config/esbuildrc.jsonc`
-- `.config/esbuildrc.yaml`
-- `.config/esbuildrc.yml`
-- `.config/esbuildrc.toml`
-- `.config/esbuildrc.js`
-- `.config/esbuildrc.ts`
-- `.config/esbuildrc.cjs`
-- `.config/esbuildrc.mjs`
-- `.config/esbuildrc.cson`
-- `esbuild.config.json`
-- `esbuild.config.jsonc`
-- `esbuild.config.yaml`
-- `esbuild.config.yml`
-- `esbuild.config.toml`
-- `esbuild.config.js`
-- `esbuild.config.ts`
-- `esbuild.config.cjs`
-- `esbuild.config.mjs`
-- `esbuild.config.cson`
+- [`package.json`](examples/package.json)
+- `.esbuildrc` (see JSON or YAML)
+- [`.esbuildrc.json`](examples/esbuild.config.json)
+- [`.esbuildrc.jsonc`](examples/esbuild.config.jsonc)
+- [`.esbuildrc.yaml`](examples/esbuild.config.yaml)
+- [`.esbuildrc.yml`](examples/esbuild.config.yml)
+- [`.esbuildrc.toml`](examples/esbuild.config.toml)
+- [`.esbuildrc.js`](examples/esbuild.config.js)
+- [`.esbuildrc.ts`](examples/esbuild.config.ts)
+- [`.esbuildrc.cjs`](examples/esbuild.config.cjs)
+- [`.esbuildrc.mjs`](examples/esbuild.config.mjs)
+- [`.esbuildrc.cson`](examples/esbuild.config.cson)
+- `.config/esbuildrc` (see JSON or YAML)
+- [`.config/esbuildrc.json`](examples/esbuild.config.json)
+- [`.config/esbuildrc.jsonc`](examples/esbuild.config.jsonc)
+- [`.config/esbuildrc.yaml`](examples/esbuild.config.yaml)
+- [`.config/esbuildrc.yml`](examples/esbuild.config.yml)
+- [`.config/esbuildrc.toml`](examples/esbuild.config.toml)
+- [`.config/esbuildrc.js`](examples/esbuild.config.js)
+- [`.config/esbuildrc.ts`](examples/esbuild.config.ts)
+- [`.config/esbuildrc.cjs`](examples/esbuild.config.cjs)
+- [`.config/esbuildrc.mjs`](examples/esbuild.config.mjs)
+- [`.config/esbuildrc.cson`](examples/esbuild.config.cson)
+- [`esbuild.config.json`](examples/esbuild.config.json)
+- [`esbuild.config.jsonc`](examples/esbuild.config.jsonc)
+- [`esbuild.config.yaml`](examples/esbuild.config.yaml)
+- [`esbuild.config.yml`](examples/esbuild.config.yml)
+- [`esbuild.config.toml`](examples/esbuild.config.toml)
+- [`esbuild.config.js`](examples/esbuild.config.js)
+- [`esbuild.config.ts`](examples/esbuild.config.ts)
+- [`esbuild.config.cjs`](examples/esbuild.config.cjs)
+- [`esbuild.config.mjs`](examples/esbuild.config.mjs)
+- [`esbuild.config.cson`](examples/esbuild.config.cson)
 
 ### CLI
 
