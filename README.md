@@ -22,39 +22,39 @@ npm install cosmic-esbuild
 
 You can write your configuration to any of the following formats (sorted by precedence):
 
-- [`package.json`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/package.json)
-- `.esbuildrc` (see JSON or YAML)
-- [`.esbuildrc.json`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.json)
-- [`.esbuildrc.jsonc`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.jsonc)
-- [`.esbuildrc.yaml`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.yaml)
-- [`.esbuildrc.yml`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.yaml)
-- [`.esbuildrc.toml`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.toml)
-- [`.esbuildrc.js`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.js)
-- [`.esbuildrc.ts`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.ts)
-- [`.esbuildrc.cjs`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.cjs)
-- [`.esbuildrc.mjs`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.js)
-- [`.esbuildrc.cson`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.cson)
-- `.config/esbuildrc` (see JSON or YAML)
-- [`.config/esbuildrc.json`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.json)
-- [`.config/esbuildrc.jsonc`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.jsonc)
-- [`.config/esbuildrc.yaml`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.yaml)
-- [`.config/esbuildrc.yml`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.yaml)
-- [`.config/esbuildrc.toml`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.toml)
-- [`.config/esbuildrc.js`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.js)
-- [`.config/esbuildrc.ts`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.ts)
-- [`.config/esbuildrc.cjs`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.cjs)
-- [`.config/esbuildrc.mjs`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.js)
-- [`.config/esbuildrc.cson`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.cson)
-- [`esbuild.config.json`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.json)
-- [`esbuild.config.jsonc`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.jsonc)
+- [`package.json`][json]
+- `.esbuildrc` (see [JSON][json] or [YAML][yaml])
+- [`.esbuildrc.json`][json]
+- [`.esbuildrc.jsonc`][jsonc]
+- [`.esbuildrc.yaml`][yaml]
+- [`.esbuildrc.yml`][yaml]
+- [`.esbuildrc.toml`][toml]
+- [`.esbuildrc.js`][js]
+- [`.esbuildrc.ts`][js]
+- [`.esbuildrc.cjs`][cjs]
+- [`.esbuildrc.mjs`][js]
+- [`.esbuildrc.cson`][cson]
+- `.config/esbuildrc` (see [JSON][json] or [YAML][yaml])
+- [`.config/esbuildrc.json`][json]
+- [`.config/esbuildrc.jsonc`][jsonc]
+- [`.config/esbuildrc.yaml`][yaml]
+- [`.config/esbuildrc.yml`][yaml]
+- [`.config/esbuildrc.toml`][toml]
+- [`.config/esbuildrc.js`][js]
+- [`.config/esbuildrc.ts`][js]
+- [`.config/esbuildrc.cjs`][cjs]
+- [`.config/esbuildrc.mjs`][js]
+- [`.config/esbuildrc.cson`][cson]
+- [`esbuild.config.json`][json]
+- [`esbuild.config.jsonc`][jsonc]
 - [`esbuild.config.yaml`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.yaml)
-- [`esbuild.config.yml`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.yaml)
-- [`esbuild.config.toml`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.toml)
-- [`esbuild.config.js`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.js)
-- [`esbuild.config.ts`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.ts)
-- [`esbuild.config.cjs`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.cjs)
-- [`esbuild.config.mjs`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.js)
-- [`esbuild.config.cson`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.cson)
+- [`esbuild.config.yml`][yaml]
+- [`esbuild.config.toml`][toml]
+- [`esbuild.config.js`][js]
+- [`esbuild.config.ts`][js]
+- [`esbuild.config.cjs`][cjs]
+- [`esbuild.config.mjs`][js]
+- [`esbuild.config.cson`][cson]
 
 ### CLI
 
@@ -77,3 +77,13 @@ For a full list of command-line arguments, run `npx cosmic-build --help`.
 ## License
 
 This work is licensed under [The MIT License](LICENSE).
+
+[manifest]: https://github.com/idleberg/cosmic-esbuild/blob/main/examples/package.json
+[json]: https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.json
+[jsonc]: https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.jsonc
+[yaml]: https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.yaml
+[toml]: https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.toml
+[js]: https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.js
+[ts]: https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.ts
+[cjs]: https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.cjs
+[cson]: https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.cson
