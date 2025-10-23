@@ -234,7 +234,7 @@ export class CosmicEsbuild {
 		const configExt = extname(filepath);
 		const configBaseName = basename(filepath);
 
-		if (configBaseName.startsWith('.esbuildrc') || filepath.startsWith('.config')) {
+		if (configBaseName.startsWith('.esbuildrc') || filepath.startsWith('.config/')) {
 			const newConfigName = `esbuild.config${configExt.length ? configExt : '.json'}`;
 
 			this.logger.warn(
