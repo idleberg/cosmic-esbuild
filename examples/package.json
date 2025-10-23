@@ -1,6 +1,7 @@
 {
 	"name": "your-app",
 	"private": true,
+	"type": "module",
 	"scripts": {
 		"build": "cosmic-esbuild",
 		"dev": "cosmic-esbuild --watch"

@@ -3,6 +3,9 @@
 	"compilerOptions": {
 		"module": "NodeNext",
 		"moduleResolution": "NodeNext",
-		"types": ["@types/node", "vitest/globals"]
+		"types": ["@types/node", "vitest/globals"],
+		"paths": {
+			"cosmic-esbuild": ["./src/config.ts"]
+		}
 	}
 }
