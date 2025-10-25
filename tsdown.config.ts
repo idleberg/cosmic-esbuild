@@ -4,11 +4,12 @@ export default defineConfig((options) => {
 	const isProduction = options.watch !== true;
 
 	const sharedConfig = {
-		target: 'node18',
 		clean: isProduction,
 		dts: isProduction,
 		format: ['esm', 'cjs'],
 		minify: isProduction,
+		platform: 'node',
+		target: 'node18',
 	};
 
 	return [
