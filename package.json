@@ -18,11 +18,12 @@
 		"cosmic-esbuild": "./bin/index.js"
 	},
 	"exports": {
-		".": {
-			"types": "./lib/config.d.ts",
-			"import": "./lib/config.js",
-			"require": "./lib/config.cjs"
-		}
+		"types": {
+			"import": "./lib/config.d.ts",
+			"require": "./lib/config.d.cts"
+		},
+		"import": "./lib/config.js",
+		"require": "./lib/config.cjs"
 	},
 	"main": "./lib/config.cjs",
 	"types": "./lib/config.d.cts",
