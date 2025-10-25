@@ -20,6 +20,9 @@ npm install cosmic-esbuild
 
 ### Configuration
 
+<details>
+<summary><strong>Supported Files</strong></summary>
+
 You can write your configuration to any of the following formats (sorted by precedence):
 
 - [`package.json`][manifest]
@@ -55,6 +58,8 @@ You can write your configuration to any of the following formats (sorted by prec
 - [`esbuild.config.cjs`][cjs]
 - [`esbuild.config.mjs`][js]
 - [`esbuild.config.cson`][cson]
+
+</details>
 
 ### CLI
 
