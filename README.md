@@ -22,7 +22,7 @@ npm install cosmic-esbuild
 
 You can write your configuration to any of the following formats (sorted by precedence):
 
-- [`package.json`][json]
+- [`package.json`][manifest]
 - `.esbuildrc` (see [JSON][json] or [YAML][yaml])
 - [`.esbuildrc.json`][json]
 - [`.esbuildrc.jsonc`][jsonc]
