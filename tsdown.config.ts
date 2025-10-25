@@ -3,16 +3,24 @@ import { defineConfig } from 'tsdown';
 export default defineConfig((options) => {
 	const isProduction = options.watch !== true;
 
-	return {
+	const sharedConfig = {
 		target: 'node18',
 		clean: isProduction,
 		dts: isProduction,
-		entry: {
-			bin: 'src/index.ts',
-			config: 'src/config.ts',
-		},
 		format: ['esm', 'cjs'],
 		minify: isProduction,
-		outDir: 'lib',
 	};
+
+	return [
+		{
+			...sharedConfig,
+			entry: 'src/index.ts',
+			outDir: 'bin',
+		},
+		{
+			...sharedConfig,
+			entry: 'src/config.ts',
+			outDir: 'lib',
+		},
+	];
 });
