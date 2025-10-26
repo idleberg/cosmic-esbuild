@@ -52,10 +52,10 @@ On Deno, you probably want to create a task in your `deno.json` file:
 }
 ```
 
-<details>
-<summary><strong>Supported Files</strong></summary>
+You can write your configuration files in a number of formats. See the following examples (sorted by precedence):
 
-You can write your configuration to any of the following formats (sorted by precedence):
+<details>
+<summary><strong>Example Configurations</strong></summary>
 
 - [`package.json`][manifest]
 - `.esbuildrc` (see [JSON][json] or [YAML][yaml])
