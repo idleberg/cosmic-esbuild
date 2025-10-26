@@ -50,7 +50,7 @@ Using Deno, you probably want to create tasks in your `deno.json` file:
 {
 	"tasks": {
 		"build": "deno run --allow-write='dist' jsr:@idleberg/cosmic-esbuild",
-		"dev": "deno run --allow-write='dist' jsr:@idleberg/cosmic-esbuild --watch",
+		"dev": "deno run --allow-write='dist' jsr:@idleberg/cosmic-esbuild --watch"
 	}
 }
 ```
