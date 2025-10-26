@@ -22,6 +22,9 @@ npm install cosmic-esbuild
 
 ### CLI
 
+> [!NOTE]
+> The CLI should primarily be used with configuration files. However, some of the basic esbuild options can be passed as command-line arguments. It's not a goal of this project to replicate esbuild's CLI functionality.
+
 ```sh
 # Build, auto-load config
 npx cosmic-esbuild
@@ -33,12 +36,21 @@ npx cosmic-esbuild --config esbuild.config.ts
 npx cosmic-esbuild --watch
 ```
 
-> [!NOTE]
-> The CLI should primarily be used with configuration files. However, some of the basic esbuild options can be passed as command-line arguments. It's not a goal of this project to replicate esbuild's CLI functionality.
-
 For a full list of command-line arguments, run `npx cosmic-build --help`.
 
+On Deno, you probably want to create a task in your `deno.json` file:
 
+> [!WARNING]
+> The following example is simplied for brevity. You will likely need to adjust the permissions to your needs.
+
+```json
+{
+	"tasks": {
+		"build": "deno run --allow-write='dist' jsr:@idleberg/cosmic-esbuild",
+		"dev": "deno run --allow-write='dist' jsr:@idleberg/cosmic-esbuild --watch",
+	}
+}
+```
 
 <details>
 <summary><strong>Supported Files</strong></summary>
