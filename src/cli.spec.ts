@@ -1,5 +1,6 @@
 /** biome-ignore-all lint/suspicious/noExplicitAny: We in a test, should be okay */
 import { rm } from 'node:fs/promises';
+import { exit } from 'node:process';
 import { program } from 'commander';
 import { createConsola } from 'consola';
 import { build, context } from 'esbuild';
@@ -9,6 +10,13 @@ import { explorer } from './cosmiconfig.ts';
 
 // Mock dependencies
 vi.mock('node:fs/promises');
+vi.mock('node:process', async () => {
+	const actual = await vi.importActual('node:process');
+	return {
+		...actual,
+		exit: vi.fn(),
+	};
+});
 vi.mock('esbuild');
 vi.mock('commander', () => ({
 	program: {
@@ -247,16 +255,13 @@ describe('CosmicEsbuild', () => {
 		});
 
 		it('should handle config loading errors', async () => {
-			const mockExit = vi.spyOn(process, 'exit').mockImplementation(() => undefined as never);
 			vi.mocked(explorer.search).mockRejectedValue(new Error('Config parse error'));
 
 			new CosmicEsbuild();
 			await vi.runAllTimersAsync();
 
 			expect(mockLogger.error).toHaveBeenCalledWith('Error loading configuration:', 'Config parse error');
-			expect(mockExit).toHaveBeenCalledWith(1);
-
-			mockExit.mockRestore();
+			expect(exit).toHaveBeenCalledWith(1);
 		});
 	});
 
