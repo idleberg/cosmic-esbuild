@@ -15,7 +15,7 @@
 	],
 	"type": "module",
 	"bin": {
-		"cosmic-esbuild": "./bin/index.js"
+		"cosmic-esbuild": "./bin/cli.js"
 	},
 	"exports": {
 		"types": {
