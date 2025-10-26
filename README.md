@@ -41,7 +41,7 @@ For a full list of command-line arguments, run `npx cosmic-build --help`.
 On Deno, you probably want to create a task in your `deno.json` file:
 
 > [!WARNING]
-> The following example is simplied for brevity. You will likely need to adjust the permissions to your needs.
+> The following example is simplied for brevity. You will likely define fine-grained permissions according to your needs. The important part is allowing to write to the `outDir` defined in your esbuild config.
 
 ```json
 {
