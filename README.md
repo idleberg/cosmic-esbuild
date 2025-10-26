@@ -4,6 +4,7 @@
 
 [![License](https://img.shields.io/github/license/idleberg/cosmic-esbuild?color=blue&style=for-the-badge)](https://github.com/idleberg/cosmic-esbuild/blob/main/LICENSE)
 [![Version: npm](https://img.shields.io/npm/v/cosmic-esbuild?style=for-the-badge)](https://www.npmjs.org/package/cosmic-esbuild)
+[![Version: jsr](https://img.shields.io/jsr/v/@idleberg/cosmic-esbuild?style=for-the-badge)](https://jsr.io/@idleberg/cosmic-esbuild)
 ![GitHub branch check runs](https://img.shields.io/github/check-runs/idleberg/cosmic-esbuild/main?style=for-the-badge)
 
 ## Description
