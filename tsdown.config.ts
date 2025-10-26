@@ -4,6 +4,7 @@ export default defineConfig((options) => {
 	const isProduction = options.watch !== true;
 
 	const sharedConfig = {
+		clean: isProduction,
 		dts: isProduction,
 		minify: isProduction,
 		target: 'node18',
