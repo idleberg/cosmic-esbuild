@@ -1,5 +1,6 @@
 import { rm } from 'node:fs/promises';
 import { basename, extname, relative } from 'node:path';
+import { cwd, exit } from 'node:process';
 import { type OptionValues, program } from 'commander';
 import { type ConsolaInstance, createConsola } from 'consola';
 import { colorize } from 'consola/utils';
@@ -7,7 +8,7 @@ import { type BuildOptions, build, context, type Plugin } from 'esbuild';
 import { explorer } from './cosmiconfig.ts';
 
 const defaultBuildOptions: BuildOptions = {
-	outdir: process.cwd(),
+	outdir: cwd(),
 };
 
 export class CosmicEsbuild {
@@ -100,7 +101,7 @@ export class CosmicEsbuild {
 			} else if (result.isEmpty) {
 				this.logger.warn('Configuration file is empty.');
 			} else {
-				const configPath = relative(process.cwd(), result.filepath);
+				const configPath = relative(cwd(), result.filepath);
 
 				this.#deprecationWarning(configPath);
 
@@ -175,7 +176,7 @@ export class CosmicEsbuild {
 		} catch (error) {
 			// Found configuration file, but an error occurred while parsing it.
 			this.logger.error('Error loading configuration:', (error as Error).message);
-			process.exit(1);
+			exit(1);
 		}
 	}
 

@@ -4,6 +4,7 @@
 
 [![License](https://img.shields.io/github/license/idleberg/cosmic-esbuild?color=blue&style=for-the-badge)](https://github.com/idleberg/cosmic-esbuild/blob/main/LICENSE)
 [![Version: npm](https://img.shields.io/npm/v/cosmic-esbuild?style=for-the-badge)](https://www.npmjs.org/package/cosmic-esbuild)
+[![Version: jsr](https://img.shields.io/jsr/v/@idleberg/cosmic-esbuild?style=for-the-badge)](https://jsr.io/@idleberg/cosmic-esbuild)
 ![GitHub branch check runs](https://img.shields.io/github/check-runs/idleberg/cosmic-esbuild/main?style=for-the-badge)
 
 ## Description
@@ -22,6 +23,9 @@ npm install cosmic-esbuild
 
 ### CLI
 
+> [!NOTE]
+> The CLI should primarily be used with configuration files. However, some of the basic esbuild options can be passed as command-line arguments. It's not a goal of this project to replicate esbuild's CLI functionality.
+
 ```sh
 # Build, auto-load config
 npx cosmic-esbuild
@@ -33,17 +37,30 @@ npx cosmic-esbuild --config esbuild.config.ts
 npx cosmic-esbuild --watch
 ```
 
-> [!NOTE]
-> The CLI should primarily be used with configuration files. However, some of the basic esbuild options can be passed as command-line arguments. It's not a goal of this project to replicate esbuild's CLI functionality.
-
 For a full list of command-line arguments, run `npx cosmic-build --help`.
 
+#### Deno
 
+Using Deno, you probably want to create tasks in your `deno.json` file:
+
+> [!WARNING]
+> The following example is simplied for brevity. You will likely define fine-grained permissions according to your needs. The important part is allowing to write to the `outDir` defined in your esbuild config.
+
+```json
+{
+	"tasks": {
+		"build": "deno run --allow-write='dist' jsr:@idleberg/cosmic-esbuild",
+		"dev": "deno run --allow-write='dist' jsr:@idleberg/cosmic-esbuild --watch",
+	}
+}
+```
+
+### File Formats
+
+You can write your configuration files in a number of formats. See the following examples (sorted by precedence):
 
 <details>
-<summary><strong>Supported Files</strong></summary>
-
-You can write your configuration to any of the following formats (sorted by precedence):
+<summary><strong>Example Configurations</strong></summary>
 
 - [`package.json`][manifest]
 - `.esbuildrc` (see [JSON][json] or [YAML][yaml])
