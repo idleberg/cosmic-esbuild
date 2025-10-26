@@ -38,6 +38,8 @@ npx cosmic-esbuild --watch
 
 For a full list of command-line arguments, run `npx cosmic-build --help`.
 
+#### Deno
+
 Using Deno, you probably want to create tasks in your `deno.json` file:
 
 > [!WARNING]
@@ -51,6 +53,8 @@ Using Deno, you probably want to create tasks in your `deno.json` file:
 	}
 }
 ```
+
+### File Formats
 
 You can write your configuration files in a number of formats. See the following examples (sorted by precedence):
 
