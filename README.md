@@ -103,6 +103,7 @@ You can write your configuration files in a number of formats. See the following
 If this project is not for you, maybe these alternatives suit you better:
 
 - [tsup](https://github.com/egoist/tsup)
+- [cosby](https://github.com/egoist/cosby)
 
 ## License
 
