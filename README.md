@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> While this project isn't dead, I have recently shifted my focus to [cosby](https://www.npmjs.com/package/@idleberg/cosby) – a similar project with a simplified API, while at the same time providing more powerful features such as extends.
+
 # cosmic-esbuild
 
 > esbuild meets cosmiconfig, write your configs like you're used to.
