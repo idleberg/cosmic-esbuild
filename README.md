@@ -98,6 +98,13 @@ You can write your configuration files in a number of formats. See the following
 
 </details>
 
+## Related
+
+If this project is not for you, maybe these alternatives suit you better:
+
+- [tsup](https://www.npmjs.com/package/tsup)
+- [cosby](https://www.npmjs.com/package/@idleberg/cosby)
+
 ## License
 
 This work is licensed under [The MIT License](LICENSE).
