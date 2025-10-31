@@ -1,4 +1,4 @@
-import { defineConfig, type UserConfig } from 'tsdown';
+import { defineConfig } from 'tsdown';
 
 export default defineConfig((options) => {
 	const isProduction = options.watch !== true;
