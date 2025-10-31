@@ -188,6 +188,8 @@ export class CosmicEsbuild {
 	}
 
 	async build() {
+		console.log(/* let it breathe */);
+
 		await this.#clean();
 
 		const start = performance.now();
@@ -212,6 +214,8 @@ export class CosmicEsbuild {
 		const watcher: Plugin = {
 			name: 'cosmic-esbuild-watcher',
 			setup(build) {
+				console.log(/* let it breathe */);
+
 				build.onStart(async () => {
 					await clean();
 					logger.info('Build started');
