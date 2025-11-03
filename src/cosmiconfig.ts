@@ -1,4 +1,4 @@
-import { cosmiconfig, defaultLoaders } from 'cosmiconfig';
+import { cosmiconfig } from 'cosmiconfig';
 import { TypeScriptLoader } from 'cosmiconfig-typescript-loader';
 import { csonLoader, jsoncLoader, tomlLoader } from './loaders.ts';
 
