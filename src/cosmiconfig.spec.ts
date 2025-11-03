@@ -5,6 +5,15 @@ vi.mock('cosmiconfig', () => ({
 		search: vi.fn(),
 		load: vi.fn(),
 	})),
+	defaultLoaders: {
+		'.ts': vi.fn(),
+	},
+}));
+
+vi.mock('./loaders.ts', () => ({
+	csonLoader: vi.fn(),
+	jsoncLoader: vi.fn(),
+	tomlLoader: vi.fn(),
 }));
 
 describe('explorer', () => {
@@ -36,6 +45,8 @@ describe('explorer', () => {
 			'.esbuildrc.ts',
 			'.esbuildrc.cjs',
 			'.esbuildrc.mjs',
+			'.esbuildrc.cts',
+			'.esbuildrc.mts',
 			'.esbuildrc.cson',
 
 			// .config folder
@@ -49,6 +60,8 @@ describe('explorer', () => {
 			'.config/esbuildrc.ts',
 			'.config/esbuildrc.cjs',
 			'.config/esbuildrc.mjs',
+			'.config/esbuildrc.cts',
+			'.config/esbuildrc.mts',
 			'.config/esbuildrc.cson',
 
 			// config files
@@ -61,7 +74,26 @@ describe('explorer', () => {
 			'esbuild.config.ts',
 			'esbuild.config.cjs',
 			'esbuild.config.mjs',
+			'esbuild.config.cts',
+			'esbuild.config.mts',
 			'esbuild.config.cson',
 		]);
+	});
+
+	it('configures cosmiconfig with correct loaders', async () => {
+		const { cosmiconfig, defaultLoaders } = await import('cosmiconfig');
+		const { csonLoader, jsoncLoader, tomlLoader } = await import('./loaders.ts');
+		await import('./cosmiconfig.ts');
+
+		const callArgs = vi.mocked(cosmiconfig).mock.calls[0]?.[1];
+
+		expect(callArgs?.loaders).toEqual({
+			'.cson': csonLoader,
+			'.cts': defaultLoaders['.ts'],
+			'.mts': defaultLoaders['.ts'],
+			'.json': jsoncLoader,
+			'.jsonc': jsoncLoader,
+			'.toml': tomlLoader,
+		});
 	});
 });

@@ -1,4 +1,4 @@
-import { cosmiconfig } from 'cosmiconfig';
+import { cosmiconfig, defaultLoaders } from 'cosmiconfig';
 import { csonLoader, jsoncLoader, tomlLoader } from './loaders.ts';
 
 const MODULE_NAME = 'esbuild';
@@ -19,6 +19,8 @@ export const explorer = cosmiconfig(MODULE_NAME, {
 		`.${MODULE_NAME}rc.ts`,
 		`.${MODULE_NAME}rc.cjs`,
 		`.${MODULE_NAME}rc.mjs`,
+		`.${MODULE_NAME}rc.cts`,
+		`.${MODULE_NAME}rc.mts`,
 		`.${MODULE_NAME}rc.cson`,
 
 		// .config folder
@@ -32,6 +34,8 @@ export const explorer = cosmiconfig(MODULE_NAME, {
 		`.config/${MODULE_NAME}rc.ts`,
 		`.config/${MODULE_NAME}rc.cjs`,
 		`.config/${MODULE_NAME}rc.mjs`,
+		`.config/${MODULE_NAME}rc.cts`,
+		`.config/${MODULE_NAME}rc.mts`,
 		`.config/${MODULE_NAME}rc.cson`,
 
 		// config files
@@ -44,10 +48,15 @@ export const explorer = cosmiconfig(MODULE_NAME, {
 		`${MODULE_NAME}.config.ts`,
 		`${MODULE_NAME}.config.cjs`,
 		`${MODULE_NAME}.config.mjs`,
+		`${MODULE_NAME}.config.cts`,
+		`${MODULE_NAME}.config.mts`,
 		`${MODULE_NAME}.config.cson`,
 	],
 	loaders: {
 		'.cson': csonLoader,
+
+		'.cts': defaultLoaders['.ts'],
+		'.mts': defaultLoaders['.ts'],
 
 		// allow JSONC in plain JSON files
 		'.json': jsoncLoader,

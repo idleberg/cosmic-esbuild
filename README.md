@@ -78,6 +78,8 @@ You can write your configuration files in a number of formats. See the following
 - [`.esbuildrc.ts`][js]
 - [`.esbuildrc.cjs`][cjs]
 - [`.esbuildrc.mjs`][js]
+- [`.esbuildrc.cts`][cjs]
+- [`.esbuildrc.mts`][js]
 - [`.esbuildrc.cson`][cson]
 - `.config/esbuildrc` (see [JSON][json] or [YAML][yaml])
 - [`.config/esbuildrc.json`][json]
@@ -89,6 +91,8 @@ You can write your configuration files in a number of formats. See the following
 - [`.config/esbuildrc.ts`][js]
 - [`.config/esbuildrc.cjs`][cjs]
 - [`.config/esbuildrc.mjs`][js]
+- [`.config/esbuildrc.cts`][cjs]
+- [`.config/esbuildrc.mts`][js]
 - [`.config/esbuildrc.cson`][cson]
 - [`esbuild.config.json`][json]
 - [`esbuild.config.jsonc`][jsonc]
@@ -99,6 +103,8 @@ You can write your configuration files in a number of formats. See the following
 - [`esbuild.config.ts`][js]
 - [`esbuild.config.cjs`][cjs]
 - [`esbuild.config.mjs`][js]
+- [`esbuild.config.cts`][cjs]
+- [`esbuild.config.mts`][js]
 - [`esbuild.config.cson`][cson]
 
 </details>
