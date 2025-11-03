@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { rm } from 'node:fs/promises';
 import { basename, extname, relative } from 'node:path';
 import { cwd, exit } from 'node:process';
@@ -6,6 +7,8 @@ import { type ConsolaInstance, createConsola } from 'consola';
 import { colorize } from 'consola/utils';
 import { type BuildOptions, build, context, type Plugin } from 'esbuild';
 import { explorer } from './cosmiconfig.ts';
+
+const { version } = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
 
 const defaultBuildOptions: BuildOptions = {
 	outdir: cwd(),
@@ -44,6 +47,7 @@ export class CosmicEsbuild {
 
 	#parseOptions() {
 		program
+			.version(version)
 			.configureOutput({
 				writeErr: (message: string) => this.logger.error(message),
 			})
