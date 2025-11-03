@@ -20,6 +20,7 @@ vi.mock('node:process', async () => {
 vi.mock('esbuild');
 vi.mock('commander', () => ({
 	program: {
+		version: vi.fn().mockReturnThis(),
 		configureOutput: vi.fn().mockReturnThis(),
 		optionsGroup: vi.fn().mockReturnThis(),
 		option: vi.fn().mockReturnThis(),
