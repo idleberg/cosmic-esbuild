@@ -27,7 +27,7 @@ npm install cosmic-esbuild
 ### CLI
 
 > [!NOTE]
-> The CLI should primarily be used with configuration files. However, some of the basic esbuild options can be passed as command-line arguments. It's not a goal of this project to replicate esbuild's CLI functionality.
+> The CLI should primarily be used with configuration files. However, some of the basic esbuild options can be passed as command-line arguments. While it might make sense to sometimes override the configuration via flag, it's not a goal of this project to replicate esbuild's CLI functionality.
 
 #### Node.js
 
