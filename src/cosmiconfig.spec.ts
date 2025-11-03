@@ -5,9 +5,12 @@ vi.mock('cosmiconfig', () => ({
 		search: vi.fn(),
 		load: vi.fn(),
 	})),
-	defaultLoaders: {
-		'.ts': vi.fn(),
-	},
+	defaultLoaders: {},
+}));
+
+const mockTsLoader = vi.fn();
+vi.mock('cosmiconfig-typescript-loader', () => ({
+	TypeScriptLoader: vi.fn(() => mockTsLoader),
 }));
 
 vi.mock('./loaders.ts', () => ({
@@ -81,7 +84,7 @@ describe('explorer', () => {
 	});
 
 	it('configures cosmiconfig with correct loaders', async () => {
-		const { cosmiconfig, defaultLoaders } = await import('cosmiconfig');
+		const { cosmiconfig } = await import('cosmiconfig');
 		const { csonLoader, jsoncLoader, tomlLoader } = await import('./loaders.ts');
 		await import('./cosmiconfig.ts');
 
@@ -89,10 +92,11 @@ describe('explorer', () => {
 
 		expect(callArgs?.loaders).toEqual({
 			'.cson': csonLoader,
-			'.cts': defaultLoaders['.ts'],
-			'.mts': defaultLoaders['.ts'],
 			'.json': jsoncLoader,
 			'.jsonc': jsoncLoader,
+			'.ts': mockTsLoader,
+			'.cts': mockTsLoader,
+			'.mts': mockTsLoader,
 			'.toml': tomlLoader,
 		});
 	});
