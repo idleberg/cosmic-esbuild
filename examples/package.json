@@ -7,7 +7,7 @@
 		"dev": "cosmic-esbuild --watch"
 	},
 	"devDependencies": {
-		"cosmic-esbuild": "0.6.2'"
+		"cosmic-esbuild": "*"
 	},
 	"esbuild": {
 		"bundle": true,
