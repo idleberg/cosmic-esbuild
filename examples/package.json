@@ -6,6 +6,9 @@
 		"build": "cosmic-esbuild",
 		"dev": "cosmic-esbuild --watch"
 	},
+	"devDependencies": {
+		"cosmic-esbuild": "0.6.2'"
+	},
 	"esbuild": {
 		"bundle": true,
 		"entryPoints": [
