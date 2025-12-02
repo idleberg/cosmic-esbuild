@@ -29,6 +29,7 @@ jobs:
             ~/.cache/deno
           key: ${{ runner.os }}-deno-${{ hashFiles('**/pnpm-lock.yaml') }}
       - run: |
+          deno install --allow-scripts
           deno lint --ignore="src/*.spec.ts"
 
           deno publish --dry-run
