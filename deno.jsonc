@@ -9,7 +9,5 @@
 	"publish": {
 		"include": ["jsr.json", "LICENSE", "README.md", "src/*", "!src/*.spec.ts"]
 	},
-	"compilerOptions": {
-		"lib": ["deno.window"]
-	}
+	"compilerOptions": {}
 }
