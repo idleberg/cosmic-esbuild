@@ -7,7 +7,7 @@ export default defineConfig((options) => {
 		clean: isProduction,
 		dts: isProduction,
 		entry: {
-			cli: 'src/index.ts',
+			cli: 'src/index.node.ts',
 			config: 'src/config.ts',
 		},
 		format: ['esm', 'cjs'],
