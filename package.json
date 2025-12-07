@@ -1,6 +1,6 @@
 {
 	"name": "cosmic-esbuild",
-	"version": "0.6.4",
+	"version": "0.6.3",
 	"description": "esbuild meets cosmiconfig, write your configs like you're used to",
 	"license": "MIT",
 	"author": "Jan T. Sott",
