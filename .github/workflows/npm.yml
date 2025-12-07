@@ -2,8 +2,10 @@ name: Publish on npm
 
 on:
   push:
-    tags:
-      - "v*"
+    # tags:
+    #   - "v*"
+    branches:
+      - main
 
 permissions:
   id-token: write # Required for OIDC
