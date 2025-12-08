@@ -1,6 +1,3 @@
-> [!IMPORTANT]
-> While this project isn't dead, I have recently shifted my focus to [cosby](https://www.npmjs.com/package/@idleberg/cosby) – a _similar_ project with a simplified API, while at the same time providing more powerful features such as extends. You might want to check out both to see which one aligns better with your needs!
-
 # cosmic-esbuild
 
 > esbuild meets cosmiconfig, write your configs like you're used to.
@@ -13,6 +10,9 @@
 ## Description
 
 This package allows you to declaratively configure `esbuild` using the popular [`cosmiconfig`](https://github.com/cosmiconfig/cosmiconfig) format. No more custom build scripts, no more lengthy build commands in your manifest.
+
+> [!IMPORTANT]
+> While this project isn't dead, I have recently shifted my focus to [cosby](https://www.npmjs.com/package/@idleberg/cosby) – a _similar_ project with a simplified API, while at the same time providing more powerful features such as extends. You might want to check out both to see which one aligns better with your needs!
 
 ## Installation
 
