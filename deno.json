@@ -7,7 +7,14 @@
 		"esbuild": "npm:esbuild@0.27.1"
 	},
 	"publish": {
-		"include": ["jsr.json", "LICENSE", "README.md", "src/*", "!src/*.spec.ts"]
+		"include": [
+			"jsr.json",
+			"LICENSE",
+			"README.md",
+			"package.json",
+			"src/*",
+			"!src/*.spec.ts"
+		]
 	},
 	"compilerOptions": {}
 }
