@@ -7,7 +7,7 @@ import { getVersion } from './utils.ts';
  * @internal
  */
 export async function handleCli() {
-	const program = new Command('loadenv');
+	const program = new Command('cosmic-esbuild');
 
 	program
 		.version(await getVersion())
