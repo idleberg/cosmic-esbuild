@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import { CosmicEsbuild } from './cli.ts';
+import { main } from './main.ts';
 
-new CosmicEsbuild();
+main();

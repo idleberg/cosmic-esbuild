@@ -10,7 +10,7 @@ export async function getVersion(): Promise<string> {
 }
 
 function loadJsrManifest() {
-	return import('../deno.jsonc', {
+	return import('../deno.json', {
 		with: { type: 'json' },
 	});
 }
