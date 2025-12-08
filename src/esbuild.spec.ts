@@ -520,11 +520,8 @@ describe('CosmicEsbuild', () => {
 			expect(rm).not.toHaveBeenCalled();
 		});
 
-		it.skip('should not clean when using outfile instead of outdir', async () => {
+		it('should not clean when using outfile instead of outdir', async () => {
 			vi.mocked(explorer.search).mockResolvedValue({
-				// TODO: This test is skipped because there's a bug where defaultBuildOptions
-				// sets outdir: cwd(), which causes the current directory to be cleaned even
-				// when using outfile instead of outdir
 				config: { entryPoints: ['src/index.ts'] },
 				filepath: 'esbuild.config.json',
 				isEmpty: false,

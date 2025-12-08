@@ -7,10 +7,6 @@ import { type BuildOptions, build, context, type Plugin } from 'esbuild';
 import { explorer } from './cosmiconfig.ts';
 import { logger } from './log.ts';
 
-const defaultBuildOptions: BuildOptions = {
-	outdir: cwd(),
-};
-
 export class CosmicEsbuild {
 	config = {} as BuildOptions;
 	options = {} as OptionValues;
@@ -56,7 +52,6 @@ export class CosmicEsbuild {
 			}
 
 			const options = {
-				...defaultBuildOptions,
 				...result?.config,
 			};
 
