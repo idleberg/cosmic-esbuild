@@ -1,8 +1,9 @@
+import type { Command } from 'commander';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { handleCli } from './cli.ts';
 import { logger } from './log.ts';
 
-// Create mock program instance
+// Create mock program instance with proper typing
 const mockProgram = {
 	version: vi.fn().mockReturnThis(),
 	configureOutput: vi.fn().mockReturnThis(),
@@ -11,8 +12,8 @@ const mockProgram = {
 	argument: vi.fn().mockReturnThis(),
 	parse: vi.fn().mockReturnThis(),
 	opts: vi.fn(),
-	args: [],
-};
+	args: [] as string[],
+} satisfies Partial<Command>;
 
 // Mock dependencies
 vi.mock('commander', () => {
