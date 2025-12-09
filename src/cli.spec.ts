@@ -95,6 +95,7 @@ describe('handleCli', () => {
 		expect(mockProgram.option).toHaveBeenCalledWith(
 			'--outdir <directory>',
 			'The output directory (for multiple entry points)',
+			'dist',
 		);
 		expect(mockProgram.option).toHaveBeenCalledWith('--outfile <file>', 'The output file (for one entry point)');
 		expect(mockProgram.option).toHaveBeenCalledWith(
