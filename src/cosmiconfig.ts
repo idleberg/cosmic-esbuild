@@ -1,6 +1,6 @@
 import { cosmiconfig } from 'cosmiconfig';
 import { TypeScriptLoader as tsLoader } from 'cosmiconfig-typescript-loader';
-import { csonLoader, jsoncLoader, tomlLoader } from './loaders.ts';
+import { csonLoader, json5Loader, jsoncLoader, tomlLoader } from './loaders.ts';
 
 const MODULE_NAME = 'esbuild';
 
@@ -12,6 +12,7 @@ export const explorer = cosmiconfig(MODULE_NAME, {
 		// runcom files
 		`.${MODULE_NAME}rc`,
 		`.${MODULE_NAME}rc.json`,
+		`.${MODULE_NAME}rc.json5`,
 		`.${MODULE_NAME}rc.jsonc`,
 		`.${MODULE_NAME}rc.yaml`,
 		`.${MODULE_NAME}rc.yml`,
@@ -27,6 +28,7 @@ export const explorer = cosmiconfig(MODULE_NAME, {
 		// .config folder
 		`.config/${MODULE_NAME}rc`,
 		`.config/${MODULE_NAME}rc.json`,
+		`.config/${MODULE_NAME}rc.json5`,
 		`.config/${MODULE_NAME}rc.jsonc`,
 		`.config/${MODULE_NAME}rc.yaml`,
 		`.config/${MODULE_NAME}rc.yml`,
@@ -41,6 +43,7 @@ export const explorer = cosmiconfig(MODULE_NAME, {
 
 		// config files
 		`${MODULE_NAME}.config.json`,
+		`${MODULE_NAME}.config.json5`,
 		`${MODULE_NAME}.config.jsonc`,
 		`${MODULE_NAME}.config.yaml`,
 		`${MODULE_NAME}.config.yml`,
@@ -59,6 +62,7 @@ export const explorer = cosmiconfig(MODULE_NAME, {
 		// allow JSONC in plain JSON files
 		'.json': jsoncLoader,
 
+		'.json5': json5Loader,
 		'.jsonc': jsoncLoader,
 
 		'.ts': tsLoader(),

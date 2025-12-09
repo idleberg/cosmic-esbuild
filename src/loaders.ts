@@ -1,4 +1,4 @@
-import { type JSONCParseError, parseJSONC, parseTOML } from 'confbox';
+import { type JSONCParseError, parseJSON5, parseJSONC, parseTOML } from 'confbox';
 import CSON from 'cson-parser';
 
 /**
@@ -22,6 +22,18 @@ export function tomlLoader(filePath: string, content: string): unknown {
 		return parseTOML(content);
 	} catch (error) {
 		throw new Error(`Error parsing TOML file at ${filePath}: ${(error as Error).message}`);
+	}
+}
+
+/**
+ * Loader for JSON5 files, adding simple error handling.
+ * @internal
+ */
+export function json5Loader(filePath: string, content: string): unknown {
+	try {
+		return parseJSON5(content);
+	} catch (error) {
+		throw new Error(`Error parsing JSON5 file at ${filePath}: ${(error as Error).message}`);
 	}
 }
 

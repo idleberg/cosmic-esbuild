@@ -15,6 +15,7 @@ vi.mock('cosmiconfig-typescript-loader', () => ({
 
 vi.mock('./loaders.ts', () => ({
 	csonLoader: vi.fn(),
+	json5Loader: vi.fn(),
 	jsoncLoader: vi.fn(),
 	tomlLoader: vi.fn(),
 }));
@@ -40,6 +41,7 @@ describe('explorer', () => {
 			// runcom files
 			'.esbuildrc',
 			'.esbuildrc.json',
+			'.esbuildrc.json5',
 			'.esbuildrc.jsonc',
 			'.esbuildrc.yaml',
 			'.esbuildrc.yml',
@@ -55,6 +57,7 @@ describe('explorer', () => {
 			// .config folder
 			'.config/esbuildrc',
 			'.config/esbuildrc.json',
+			'.config/esbuildrc.json5',
 			'.config/esbuildrc.jsonc',
 			'.config/esbuildrc.yaml',
 			'.config/esbuildrc.yml',
@@ -69,6 +72,7 @@ describe('explorer', () => {
 
 			// config files
 			'esbuild.config.json',
+			'esbuild.config.json5',
 			'esbuild.config.jsonc',
 			'esbuild.config.yaml',
 			'esbuild.config.yml',
@@ -85,7 +89,7 @@ describe('explorer', () => {
 
 	it('configures cosmiconfig with correct loaders', async () => {
 		const { cosmiconfig } = await import('cosmiconfig');
-		const { csonLoader, jsoncLoader, tomlLoader } = await import('./loaders.ts');
+		const { csonLoader, json5Loader, jsoncLoader, tomlLoader } = await import('./loaders.ts');
 		await import('./cosmiconfig.ts');
 
 		const callArgs = vi.mocked(cosmiconfig).mock.calls[0]?.[1];
@@ -93,6 +97,7 @@ describe('explorer', () => {
 		expect(callArgs?.loaders).toEqual({
 			'.cson': csonLoader,
 			'.json': jsoncLoader,
+			'.json5': json5Loader,
 			'.jsonc': jsoncLoader,
 			'.ts': mockTsLoader,
 			'.cts': mockTsLoader,

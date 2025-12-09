@@ -67,6 +67,7 @@ You can write your configuration files in a number of formats. See the following
 - [`package.json`][manifest]
 - `.esbuildrc` (see [JSON][json] or [YAML][yaml])
 - [`.esbuildrc.json`][json]
+- [`.esbuildrc.json5`][json5]
 - [`.esbuildrc.jsonc`][jsonc]
 - [`.esbuildrc.yaml`][yaml]
 - [`.esbuildrc.yml`][yaml]
@@ -80,6 +81,7 @@ You can write your configuration files in a number of formats. See the following
 - [`.esbuildrc.cson`][cson]
 - `.config/esbuildrc` (see [JSON][json] or [YAML][yaml])
 - [`.config/esbuildrc.json`][json]
+- [`.config/esbuildrc.json5`][json5]
 - [`.config/esbuildrc.jsonc`][jsonc]
 - [`.config/esbuildrc.yaml`][yaml]
 - [`.config/esbuildrc.yml`][yaml]
@@ -92,6 +94,7 @@ You can write your configuration files in a number of formats. See the following
 - [`.config/esbuildrc.mts`][js]
 - [`.config/esbuildrc.cson`][cson]
 - [`esbuild.config.json`][json]
+- [`esbuild.config.json5`][json5]
 - [`esbuild.config.jsonc`][jsonc]
 - [`esbuild.config.yaml`](https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.yaml)
 - [`esbuild.config.yml`][yaml]
@@ -119,6 +122,7 @@ This work is licensed under [The MIT License](LICENSE).
 
 [manifest]: https://github.com/idleberg/cosmic-esbuild/blob/main/examples/package.json
 [json]: https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.json
+[json5]: https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.json5
 [jsonc]: https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.jsonc
 [yaml]: https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.yaml
 [toml]: https://github.com/idleberg/cosmic-esbuild/blob/main/examples/esbuild.config.toml

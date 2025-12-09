@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { csonLoader, jsoncLoader, tomlLoader } from './loaders.ts';
+import { csonLoader, json5Loader, jsoncLoader, tomlLoader } from './loaders.ts';
 
 describe('csonLoader', () => {
 	it('parses valid CSON', () => {
@@ -28,6 +28,21 @@ describe('tomlLoader', () => {
 		const content = 'foo = ';
 
 		expect(() => tomlLoader('bad.toml', content)).toThrow(/Error parsing TOML file/);
+	});
+});
+
+describe('json5Loader', () => {
+	it('parses valid JSON5', () => {
+		const content = '{ "foo": "bar", /* comment */ "num": 42, }';
+		const result = json5Loader('test.json5', content);
+
+		expect(result).toEqual({ foo: 'bar', num: 42 });
+	});
+
+	it('throws on invalid JSON5', () => {
+		const content = '{ foo: }';
+
+		expect(() => json5Loader('bad.json5', content)).toThrow(/Error parsing JSON5 file/);
 	});
 });
 
