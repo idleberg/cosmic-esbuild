@@ -1,5 +1,5 @@
 import { cosmiconfig } from 'cosmiconfig';
-import { TypeScriptLoader } from 'cosmiconfig-typescript-loader';
+import { TypeScriptLoader as tsLoader } from 'cosmiconfig-typescript-loader';
 import { csonLoader, jsoncLoader, tomlLoader } from './loaders.ts';
 
 const MODULE_NAME = 'esbuild';
@@ -61,9 +61,9 @@ export const explorer = cosmiconfig(MODULE_NAME, {
 
 		'.jsonc': jsoncLoader,
 
-		'.ts': TypeScriptLoader(),
-		'.cts': TypeScriptLoader(),
-		'.mts': TypeScriptLoader(),
+		'.ts': tsLoader(),
+		'.cts': tsLoader(),
+		'.mts': tsLoader(),
 
 		'.toml': tomlLoader,
 	},
