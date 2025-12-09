@@ -1,6 +1,5 @@
-import TOML from '@iarna/toml';
+import { type JSONCParseError, parseJSONC, parseTOML } from 'confbox';
 import CSON from 'cson-parser';
-import JSONC, { type ParseError } from 'jsonc-parser';
 
 /**
  * Loader for CSON files.
@@ -18,9 +17,9 @@ export function csonLoader(filePath: string, content: string) {
  * Loader for TOML files.
  * @internal
  */
-export function tomlLoader(filePath: string, content: string): TOML.JsonMap {
+export function tomlLoader(filePath: string, content: string): unknown {
 	try {
-		return TOML.parse(content);
+		return parseTOML(content);
 	} catch (error) {
 		throw new Error(`Error parsing TOML file at ${filePath}: ${(error as Error).message}`);
 	}
@@ -30,14 +29,14 @@ export function tomlLoader(filePath: string, content: string): TOML.JsonMap {
  * Loader for JSONC files, adding simple error handling.
  * @internal
  */
-export function jsoncLoader(filePath: string, content: string): ReturnType<typeof JSONC.parse> {
-	const errors: ParseError[] = [];
-	const result = JSONC.parse(content, errors);
+export function jsoncLoader(filePath: string, content: string): unknown {
+	const errors: JSONCParseError[] = [];
+	const result = parseJSONC(content, { errors });
 
-	// JSONC.parse does not throw on errors, it returns an array of errors
+	// Does not throw on errors, it returns an array of errors
 	if (errors.length > 0) {
 		const firstError = errors[0];
-		const errorCode = firstError ? JSONC.printParseErrorCode(firstError.error) : 'Unknown error';
+		const errorCode = firstError ? firstError.error : 'Unknown error';
 
 		throw new Error(`Error parsing JSONC file at ${filePath}: ${errorCode}`);
 	}

@@ -48,13 +48,12 @@
 		"test": "vitest run"
 	},
 	"dependencies": {
-		"@iarna/toml": "^2.2.5",
 		"commander": "^14.0.2",
+		"confbox": "^0.2.2",
 		"consola": "^3.4.2",
 		"cosmiconfig": "^9.0.0",
 		"cosmiconfig-typescript-loader": "^6.2.0",
 		"cson-parser": "^4.0.9",
-		"jsonc-parser": "^3.3.1",
 		"typescript": "^5.9.3"
 	},
 	"devDependencies": {
