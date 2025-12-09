@@ -61,7 +61,7 @@
 		"@commitlint/config-conventional": "^20.2.0",
 		"@e18e/cli": "^0.3.1",
 		"@idleberg/configs": "^0.3.3",
-		"@types/node": "^24.10.1",
+		"@types/node": "^24.10.2",
 		"@vitest/coverage-v8": "^4.0.15",
 		"concurrently": "^9.2.1",
 		"np": "^10.2.0",
