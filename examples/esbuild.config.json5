@@ -1,7 +1,6 @@
-// Look ma, comments!
 {
 	"bundle": true,
 	"entryPoints": ["app.js"],
 	"outdir": "lib",
-	"sourcemap": "external",
+	"sourcemap": "external", // comments and trailing commas!
 }
