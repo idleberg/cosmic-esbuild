@@ -28,7 +28,7 @@ export async function handleCli() {
 		.option('--format <iife|cjs|esm>', 'Output format')
 		.option('--loader <X=L>', 'Use loader L to load file extension X')
 		.option('--minify', 'Minify the output', false)
-		.option('--outdir <directory>', 'The output directory (for multiple entry points)')
+		.option('--outdir <directory>', 'The output directory (for multiple entry points)', 'dist')
 		.option('--outfile <file>', 'The output file (for one entry point)')
 		.option('--packages <bundle|external>', 'Set to "external" to avoid bundling any package')
 		.option('--sourcemap', 'Emit a source map', false)
