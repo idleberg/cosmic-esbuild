@@ -10,6 +10,11 @@ export default defineConfig((options) => {
 			cli: 'src/index.node.ts',
 			config: 'src/config.ts',
 		},
+		external: [
+			// ensure we always read the current version from the manifests
+			'../deno.json',
+			'../package.json',
+		],
 		format: ['esm', 'cjs'],
 		minify: isProduction,
 		outDir: 'lib',
