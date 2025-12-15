@@ -41,6 +41,10 @@ npx cosmic-esbuild --watch
 
 For a full list of command-line arguments, run `npx cosmic-build --help`.
 
+### Bun
+
+All of the Node.js examples are valid as long as you substitute `npx` with `bunx`.
+
 #### Deno
 
 Using Deno, you probably want to create tasks in your `deno.json` file:
