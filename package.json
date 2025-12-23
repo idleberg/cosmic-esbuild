@@ -53,8 +53,7 @@
 		"consola": "^3.4.2",
 		"cosmiconfig": "^9.0.0",
 		"cosmiconfig-typescript-loader": "^6.2.0",
-		"cson-parser": "^4.0.9",
-		"typescript": "^5.9.3"
+		"cson-parser": "^4.0.9"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^20.2.0",
@@ -64,6 +63,7 @@
 		"@vitest/coverage-v8": "^4.0.15",
 		"concurrently": "^9.2.1",
 		"np": "^10.2.0",
+		"typescript": "^5.9.3",
 		"tsdown": "^0.18.0",
 		"vitest": "^4.0.15"
 	},
