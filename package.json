@@ -55,8 +55,8 @@
 		"cson-parser": "^4.0.9"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^20.4.1",
-		"@commitlint/config-conventional": "^20.4.1",
+		"@commitlint/cli": "^20.4.2",
+		"@commitlint/config-conventional": "^20.4.2",
 		"@idleberg/configs": "^0.4.2",
 		"@types/node": "^24.10.2",
 		"@vitest/coverage-v8": "^4.0.18",
