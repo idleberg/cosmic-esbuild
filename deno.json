@@ -1,10 +1,10 @@
 {
 	"name": "@idleberg/cosmic-esbuild",
-	"version": "0.7.1",
+	"version": "0.7.2",
 	"license": "MIT",
 	"exports": "./src/index.deno.ts",
 	"imports": {
-		"esbuild": "npm:esbuild@0.27.1"
+		"esbuild": "npm:esbuild@0.27.3"
 	},
 	"publish": {
 		"include": [
