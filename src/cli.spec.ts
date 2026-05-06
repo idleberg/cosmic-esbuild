@@ -1,5 +1,5 @@
 import type { Command } from 'commander';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { handleCli } from './cli.ts';
 import { logger } from './log.ts';
 
@@ -11,6 +11,7 @@ const mockProgram = {
 	option: vi.fn().mockReturnThis(),
 	argument: vi.fn().mockReturnThis(),
 	parse: vi.fn().mockReturnThis(),
+	outputHelp: vi.fn(),
 	opts: vi.fn(),
 	args: [] as string[],
 } satisfies Partial<Command>;
@@ -41,10 +42,30 @@ vi.mock('./utils.ts', () => ({
 }));
 
 describe('handleCli', () => {
+	let originalArgv: string[];
+
 	beforeEach(() => {
 		vi.clearAllMocks();
 		mockProgram.opts.mockReturnValue({});
 		mockProgram.args = [];
+		originalArgv = process.argv;
+		process.argv = ['node', 'cli', 'src/index.ts'];
+	});
+
+	afterEach(() => {
+		process.argv = originalArgv;
+	});
+
+	it('should output help and exit when no arguments are provided', async () => {
+		process.argv = ['node', 'cli'];
+		const mockExit = vi.spyOn(process, 'exit').mockImplementation(() => undefined as never);
+
+		await handleCli();
+
+		expect(mockProgram.outputHelp).toHaveBeenCalled();
+		expect(mockExit).toHaveBeenCalledWith(0);
+
+		mockExit.mockRestore();
 	});
 
 	it('should set version', async () => {
