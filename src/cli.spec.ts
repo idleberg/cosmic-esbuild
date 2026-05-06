@@ -1,3 +1,4 @@
+import process from 'node:process';
 import type { Command } from 'commander';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { handleCli } from './cli.ts';
