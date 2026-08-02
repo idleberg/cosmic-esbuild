@@ -16,5 +16,6 @@
 			"!src/*.spec.ts"
 		]
 	},
+	"minimumDependencyAge": 0,
 	"compilerOptions": {}
 }
