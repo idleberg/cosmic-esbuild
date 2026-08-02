@@ -28,7 +28,7 @@
 	"main": "./lib/config.cjs",
 	"types": "./lib/config.d.cts",
 	"engines": {
-		"node": ">=20.0.0"
+		"node": ">=22.21.0"
 	},
 	"files": [
 		"lib/",
