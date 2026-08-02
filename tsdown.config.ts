@@ -20,6 +20,6 @@ export default defineConfig((options) => {
 		format: ['esm', 'cjs'],
 		minify: isProduction,
 		outDir: 'lib',
-		target: 'node18',
+		target: 'node22',
 	};
 });
